@@ -1,15 +1,19 @@
+<!-- This html page shows up on every page of our website/app. -->
+
 <!DOCTYPE html>
 <html>
   <head>
     <title>Saasapp</title>
     <%= csrf_meta_tags %>
     
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= yield %>   <!-- This line is where Rails injects the code from the home.html.erb file. -->
   </body>
 </html>
+
+
