@@ -16,27 +16,33 @@
 
 @import 'bootstrap';
 
+// Typography styles
 body {
 	font-family: 'Roboto', sans-serif;
 }
 
+// Navbar styles
+// Background gradient - from @_ighosh at uigradients.com
 .navbar, .home-callout { 
-	//Gradient from @_ighosh at uigradients.com
 	background: #0F2027;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to left, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.navbar {
-	border: none;
+.navbar { border: none; }
+
+.navbar-default .navbar-brand, 
+.navbar-default .navbar-nav > li > a { 
+    color: rgba(255, 255, 255, 0.8); 
+    &:hover { color:rgba(255, 255, 255, 0.55); }
 }
 
-/* navbar-light in Bootstrap 3; better way to do this? */
-.navbar a { color: rgba(255, 255, 255, 0.7) !important; }
-.navbar a:hover { color: rgba(255, 255, 255, 0.5) !important} 
-
+// Homepage styles
 .home-callout {
     color: rgba(255, 255, 255, 0.9);
     margin-top: -20px;
-    padding-bottom: 20px;
+    padding-top: 70px;
+    padding-bottom: 50px;
 }
+
+.logo-color { color: #00C1FF; }
