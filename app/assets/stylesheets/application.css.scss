@@ -13,15 +13,14 @@
 	*= require_tree .
 	*= require_self
 */
-	
-	@import 'bootstrap-sprockets';
+
 @import 'bootstrap';
 
-html {
+body {
 	font-family: 'Roboto', sans-serif;
 }
 
-body, .navbar { 
+.navbar, .home-callout { 
 	//Gradient from @_ighosh at uigradients.com
 	background: #0F2027;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to left, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
@@ -30,4 +29,14 @@ body, .navbar {
 
 .navbar {
 	border: none;
+}
+
+/* navbar-light in Bootstrap 3; better way to do this? */
+.navbar a { color: rgba(255, 255, 255, 0.7) !important; }
+.navbar a:hover { color: rgba(255, 255, 255, 0.5) !important} 
+
+.home-callout {
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: -20px;
+    padding-bottom: 20px;
 }
