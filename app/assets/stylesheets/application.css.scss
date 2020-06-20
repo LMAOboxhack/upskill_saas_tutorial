@@ -10,6 +10,10 @@
 	* files in this directory. Styles in this file should be added after the last require_* statement.
 	* It is generally better to create a new file per style scope.
 	*
+	* Asset pipeline - This manifest file will take all the files in the stylesheets directory (in alphabetical order) &
+    * inject them into this file, right where it says "*= require tree". This is to increase the website's speed &
+    * reduce server costs, as in the real world website traffic can be very high at any given time.
+    *
 	*= require_tree .
 	*= require_self
 */
