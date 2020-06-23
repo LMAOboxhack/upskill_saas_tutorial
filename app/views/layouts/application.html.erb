@@ -28,11 +28,17 @@
                 <div class="collapse navbar-collapse" id="main-nav-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><%= link_to "About", about_path %></li>    <!-- This way is for if you only need clickable text. -->
-                        <li><%= link_to "Contact Us", new_contact_path %></li>
+                        <li><%= link_to "Contact Us", contact_us_path %></li>
                     </ul>
                 </div> <!-- /.navbar-collapse -->
             </div>
         </nav>
+        
+        <div class="container">
+            <% flash.each do |key, value| %>
+                <%= content_tag :div, value.html_safe, class: "alert alert-#{key}" %>
+            <% end %>
+        </div>
         <%= yield %>   <!-- This line is where Rails injects the code from the home.html.erb file. -->
     </body>
 </html>
