@@ -1,29 +1,67 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h2 class="signup-header-padding">Sign up</h2>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="well">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+        
+          <div class="field form-group">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+          </div>
+        
+          <div class="field form-group">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+          </div>
+        
+          <div class="field form-group">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+          </div>
+        
+          <div class="actions form-group">
+            <%= f.submit "Sign up", class: 'btn btn-success' %>
+          </div>
+        <% end %>
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+    <div class="col-md-7 col-md-offset-1">
+      <h1 class="join-header"><span class="logo-color">Join</span> today - it's free.</h1>
+      <div class="media">
+        <div class="media-left media-middle">
+          <img class="media-object icon-size" src="https://image.flaticon.com/icons/svg/3039/3039679.svg">
+        </div>
+        <div class="media-body"><div class="media-header"><h4 class="signup-padding">Connect with millions worldwide</h4></div></div>
+      </div>
+      <div class="media">
+        <div class="media-left media-middle">
+          <img class="media-object icon-size" src="https://image.flaticon.com/icons/svg/1006/1006555.svg">
+        </div>
+        <div class="media-body"><div class="media-header"><h4 class="signup-padding">Collaborate with professionals in various spheres</h4></div></div>
+      </div>
+      <div class="media">
+        <div class="media-left media-middle">
+          <img class="media-object icon-size" src="https://image.flaticon.com/icons/svg/2910/2910875.svg">
+        </div>
+        <div class="media-body"><div class="media-header"><h4 class="signup-padding">Exchange ideas with like-minded entrepreneurs</h4></div></div>
+      </div>
+    </div>
   </div>
+</div>
+  
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+
+
+
