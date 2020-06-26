@@ -61,7 +61,7 @@ body {
 
 .logo-color { color: #00C1FF; }
 
-// Registration page styles
+// Registration & login page styles
 .signup-header-padding{
     padding-left: 19px;
 }
@@ -76,4 +76,12 @@ body {
 
 .icon-size {
     width: 40px;
+}
+
+.login-img-size {
+    width: 200px;
+}
+
+.alert-notice {
+    display: none;
 }
