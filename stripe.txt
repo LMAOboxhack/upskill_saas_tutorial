@@ -1,0 +1,21 @@
+STRIPE CODE
+
+How Stripe works:
+  - When user enters CC info & hits submit, JavaScript pauses the submit so that the 
+    CC info is not saved onto our database, preventing legal complications.
+    
+  - JavaScript code will then extract the CC info from the form & send it to the Stripe
+    servers, where Stripe will process the card info & send back to us a unique 'Card Token' (one-time use).
+    
+  - The form submission to our own servers will then resume, where the user's personal particulars 
+    (username, password etc.) are then validated on our servers (e.g. Devise will check
+    that the email contains the '@' char, password is at least 6 chars, etc.)
+    
+  - If the validations are cleared, our servers will then take the user's info,
+    along with the plan ID & Card Token, and send it back to the Stripe servers again, 
+    where Stripe will then take the info and log in a new subscription on their
+    databases, which we can see from the Stripe dashboard. The Stripe servers will
+    then send us back a unique 'Customer Token' (recurring use), which we can then finally save on 
+    our own servers, along with the user's data (user, pass etc.).
+  - This is also the step in which Stripe will process the charge on the user's card.
+  - To save the Customer Token to our DB, we should also create a new column in the Users table.
