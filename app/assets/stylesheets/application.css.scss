@@ -1,21 +1,21 @@
 /*
-	* This is a manifest file that'll be compiled into application.css, which will include all the files
-	* listed below.
-	*
-	* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
-	* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
-	*
-	* You're free to add application-wide styles to this file and they'll appear at the bottom of the
-	* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
-	* files in this directory. Styles in this file should be added after the last require_* statement.
-	* It is generally better to create a new file per style scope.
-	*
-	* Asset pipeline - This manifest file will take all the files in the stylesheets directory (in alphabetical order) &
+  * This is a manifest file that'll be compiled into application.css, which will include all the files
+  * listed below.
+  *
+  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+  * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+  *
+  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+  * files in this directory. Styles in this file should be added after the last require_* statement.
+  * It is generally better to create a new file per style scope.
+  *
+  * Asset pipeline - This manifest file will take all the files in the stylesheets directory (in alphabetical order) &
     * inject them into this file, right where it says "*= require tree". This is to increase the website's speed &
     * reduce server costs, as in the real world website traffic can be very high at any given time.
     *
-	*= require_tree .
-	*= require_self
+  *= require_tree .
+  *= require_self
 */
 
 @import 'bootstrap-sprockets';
@@ -23,21 +23,34 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+// General classes
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+.vcenter{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+  
 // Typography styles
 body { font-family: 'Roboto', sans-serif; }
 
 // Navbar styles
 // Background gradient - from @_ighosh at uigradients.com
 .navbar, .home-callout { 
-	background: #0F2027;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to left, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .navbar-default .navbar-brand, 
 .navbar-default .navbar-nav > li > a { 
-    color: rgba(255, 255, 255, 0.8); 
-    &:hover { color:rgba(255, 255, 255, 0.55); }
+  color: rgba(255, 255, 255, 0.8); 
+  &:hover { color:rgba(255, 255, 255, 0.55); }
 }
 
 .navbar { border: none; }
@@ -46,7 +59,7 @@ body { font-family: 'Roboto', sans-serif; }
 
     // Login dropdown button overriding style
 .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) { 
-    border-bottom-right-radius: 4px; border-top-right-radius: 4px; }
+  border-bottom-right-radius: 4px; border-top-right-radius: 4px; }
 
 // Homepage styles
 .home-callout {
@@ -62,28 +75,29 @@ body { font-family: 'Roboto', sans-serif; }
     border-radius: 10px; 
 }
 
-.logo-color { color: #34b1d9; }
+.basic-color { color: #34b1d9; }
+.pro-color { color: #799F0C; }
 .panel .list-group-item { border: none; background-color: #00ffff; }
 
 .panel-heading {
-    border: none;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-    .panel-primary > & {
-        background: #1c92d2;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to left, #0082d9, #004878);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to left, #0082d9, #004878); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    }
-    .panel-success > & {
-        color: white;
-        background: #799F0C;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to left, #ACBB78, #799F0C);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to left, #ACBB78, #799F0C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    }
+  border: none;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  .panel-primary > & {
+    background: #1c92d2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #0082d9, #004878);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #0082d9, #004878); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  .panel-success > & {
+    color: white;
+    background: #799F0C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #ACBB78, #799F0C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #ACBB78, #799F0C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
 }
 
 .panel > .list-group:last-child .list-group-item:last-child { 
-    border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; }
+  border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; }
 
 // Registration & login page styles
 .signup-header-padding { padding-left: 19px; }
@@ -92,3 +106,4 @@ body { font-family: 'Roboto', sans-serif; }
 .icon-size { width: 40px; }
 .login-img-size { width: 200px; }
 .alert-notice { display: none; }
+.grey-divider { border-top: 1px solid #cdcdcd; }
