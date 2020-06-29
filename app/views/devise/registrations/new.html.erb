@@ -1,7 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-      <h2 class="signup-header-padding">Sign up</h2>
+      <% if params[:plan] == '1' %>
+        <h2 class="signup-header-padding">Basic sign-up</h2>
+      <% else %>
+        <h2 class="signup-header-padding">Pro sign-up</h2>
+      <% end %>
     </div>
   </div>
   <div class="row">

@@ -24,9 +24,7 @@
 @import "font-awesome";
 
 // Typography styles
-body {
-	font-family: 'Roboto', sans-serif;
-}
+body { font-family: 'Roboto', sans-serif; }
 
 // Navbar styles
 // Background gradient - from @_ighosh at uigradients.com
@@ -36,14 +34,13 @@ body {
 	background: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.navbar { border: none; }
-
 .navbar-default .navbar-brand, 
 .navbar-default .navbar-nav > li > a { 
     color: rgba(255, 255, 255, 0.8); 
     &:hover { color:rgba(255, 255, 255, 0.55); }
 }
 
+.navbar { border: none; }
 .fa-group { padding-right: 10px; }
 
 
@@ -59,29 +56,39 @@ body {
     padding-bottom: 50px;
 }
 
+.panel { 
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px; 
+}
+
 .logo-color { color: #34b1d9; }
+.panel .list-group-item { border: none; background-color: #00ffff; }
+
+.panel-heading {
+    border: none;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    .panel-primary > & {
+        background: #1c92d2;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #0082d9, #004878);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #0082d9, #004878); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    .panel-success > & {
+        color: white;
+        background: #799F0C;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #ACBB78, #799F0C);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #ACBB78, #799F0C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+}
+
+.panel > .list-group:last-child .list-group-item:last-child { 
+    border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; }
 
 // Registration & login page styles
-.signup-header-padding{
-    padding-left: 19px;
-}
-
-.padding-left-5 {
-    padding-left: 5px;
-}
-
-.join-header {
-    padding-bottom: 15px;
-}
-
-.icon-size {
-    width: 40px;
-}
-
-.login-img-size {
-    width: 200px;
-}
-
-.alert-notice {
-    display: none;
-}
+.signup-header-padding { padding-left: 19px; }
+.padding-left-5 { padding-left: 5px; }
+.join-header { padding-bottom: 15px; }
+.icon-size { width: 40px; }
+.login-img-size { width: 200px; }
+.alert-notice { display: none; }
