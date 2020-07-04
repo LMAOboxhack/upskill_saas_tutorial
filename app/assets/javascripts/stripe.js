@@ -10,7 +10,7 @@ $(document).on('turbolinks:load', function() {
   
   // When 'Submit' button is pressed,
   submitButton.click(function(event) {
-    // Pause usual behaviour (aka save to Database)
+    // Prevent usual behaviour (validation & save to Database)
     event.preventDefault();
     // Disable button & alert user that JS is working in the background
     submitButton.val("Processing...").prop('disabled', true);
@@ -23,40 +23,48 @@ $(document).on('turbolinks:load', function() {
       
     /* Use Stripe JS library to validate card */
     var error = false;
-    var checks = [
-      ["card number", Stripe.card.validateCardNumber(cardNum)],
-      ["CVC", Stripe.card.validateCVC(cvcNum)],
-      ["card expiration date", Stripe.card.validateExpiry(expMonth, expYear)]
-    ];
-    var checksLength = checks.length;
-    for (var i = 0; i < checksLength; i++) {
-      if(!checks[i][1]) {
+    var checks = {
+      cardNumberCheck: Stripe.card.validateCardNumber(cardNum),
+      CVCCheck: Stripe.card.validateCVC(cvcNum),
+      cardExpirationDateCheck: Stripe.card.validateExpiry(expMonth, expYear)
+    };
+    
+    for (const [key, value] of Object.entries(checks)) {
+      if(!value) {
         error = true;
-        alert(`The ${checks[i][0]} appears to be invalid.`);
+        alert(`The ${ key } appears to be invalid.`);
         break;
       }
     }
     
-    if (error) { submitButton.val("Sign up").prop('disabled', false); } // Refresh signup button
+    // If there is an error, refresh the signup button to allow user to rectify fields
+    if (error) { submitButton.val("Sign up").prop('disabled', false); }
     else {
-      // Send CC info to Stripe using said variables.
-      Stripe.createToken({
+      // Send CC info to Stripe
+      Stripe.card.createToken({
         number: cardNum,
         cvc: cvcNum,
         exp_month: expMonth,
         exp_year: expYear
-      }, stripeResponseHandler); // --> Name of the function executed when the token is returned to us by Stripe
+      }, stripeResponseHandler); // --> Name of the function (below) executed when the token is returned by Stripe
     }
+    
     return false;
   });
     
   // When Stripe returns Card Token,
   function stripeResponseHandler(status, response) {
-    // Get the Card Token from the response.
-    var token = response.id;
-    // Inject Card Token to form as hidden field.
-    proForm.append( $('<input type="hidden" name="user[stripe_card_token]">').val(token) )
-    // Submit form (with card token & not CC info) to our app for validation. 
-    proForm.get(0).submit();
+    if (response.error) { // Problem!
+      // Show the errors on the form
+      proForm.find('.payment-errors').text(response.error.message);
+      submitButton.val("Sign up").prop('disabled', false); // Refresh signup button
+    } else { // Token was created!
+      // Get the Card Token from the response.
+      var token = response.id;
+      // Inject Card Token to form as hidden field.
+      proForm.append( $('<input type="hidden" name="user[stripe_card_token]">').val(token) );
+      // Submit form (with card token & not CC info) to our app for validation & saving. 
+      proForm.get(0).submit();
+    }
   }
 });
