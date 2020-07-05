@@ -6,7 +6,7 @@ gem 'puma', '3.4.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '5.0.6'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '3.0.0'
+gem 'uglifier', '4.2.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '4.2.1'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -37,7 +37,7 @@ gem 'font-awesome-sass', '4.6.2'
 gem 'hirb', '0.7.3'
 
 # Use devise gem for managing user accounts, handling user authentication
-gem 'devise', '4.2.0'
+gem 'devise', '4.7.2'
 
 # Use Stripe for payment processing
 gem 'stripe', '5.22.0'

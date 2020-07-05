@@ -58,10 +58,10 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
-    devise (4.2.0)
+    devise (4.7.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
-      railties (>= 4.1.0, < 5.1)
+      railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
     erubis (2.7.0)
@@ -168,7 +168,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
-    uglifier (3.0.0)
+    uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     warden (1.2.8)
       rack (>= 2.0.6)
@@ -188,7 +188,7 @@ DEPENDENCIES
   bootstrap (~> 4.1, >= 4.1.3)
   byebug
   coffee-rails (= 4.2.1)
-  devise (= 4.2.0)
+  devise (= 4.7.2)
   figaro (= 1.1.1)
   font-awesome-sass (= 4.6.2)
   hirb (= 0.7.3)
@@ -206,7 +206,7 @@ DEPENDENCIES
   stripe (= 5.22.0)
   turbolinks (= 5.0.0)
   tzinfo-data
-  uglifier (= 3.0.0)
+  uglifier (= 4.2.0)
   web-console
 
 RUBY VERSION
