@@ -1,41 +1,47 @@
-<div class="home-callout text-center container-fluid">
+<% if !flash.empty? %>
+    <div class="home-callout text-center container-fluid with-alert">
+<% else %>
+    <div class="home-callout text-center container-fluid">
+<% end %>
     <h1>Welcome to <span class="logo-color">DevMatch</span></h1>
     <h3>Where entrepreneurs and developers meet.</h3>
 </div>
-<div class="container-fluid">
+<div class="container mt-4">
     <div class="row">
-        <div class="col-md-4 col-md-offset-2">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h2 class="text-center">Basic</h2><hr>
-                    <p class="text-center">Free</p>
+        <div class="col-md-4 offset-md-2 my-autso">
+            <div class="card">
+                <div class="card-header basic-card">
+                    <h2 class="text-center my-2">Basic</h2><hr>
+                    <h6 class="text-center my-2">Free</h6>
                 </div>
                 <ul class="list-group">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Morbi leo risus</li>
-                    <li class="list-group-item">The quick brown fox</li>
-                    <li class="list-group-item">Jumps over the lazy brown dog</li>
-                    <li class="list-group-item">Phineas and ferb</li>
-                    <li class="list-group-item text-center"><%= link_to "Sign up for free", new_user_registration_path(plan: @basicPlan.id), class: 'btn btn-primary btn-lg' %></li>
+                    <li class="list-group-item">Join our network of professionals worldwide</li>
+                    <li class="list-group-item">Basic feature 2</li>
+                    <li class="list-group-item">Basic feature 3</li>
+                    <li class="list-group-item">Basic feature 4</li>
+                    <li class="list-group-item">Basic feature 5</li>
                 </ul>
+                <div class="card-footer text-center">
+                    <%= link_to "Sign up for free", new_user_registration_path(plan: @basicPlan.id), class: 'btn btn-primary btn-lg' %>
+                </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                    <h2 class="text-center">Pro</h2><hr>
-                    <p class="text-center">$9.90/month</p>
+        <div class="col-md-4 my-auto">
+            <div class="card align-middle">
+                <div class="card-header pro-card">
+                    <h2 class="text-center my-2">Pro</h2><hr>
+                    <h6 class="text-center my-2">$9.90/month</h6>
                 </div>
                 <ul class="list-group">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Morbi leo risus</li>
-                    <li class="list-group-item">The quick brown fox</li>
-                    <li class="list-group-item">Jumps over the lazy brown dog</li>
-                    <li class="list-group-item">Phineas and ferb</li>
-                    <li class="list-group-item text-center"><%= link_to "Go Pro", new_user_registration_path(plan: @proPlan.id), class: 'btn btn-success btn-lg' %></li>
+                    <li class="list-group-item">Exclusive access to our curated communities</li>
+                    <li class="list-group-item">Premium feature 2</li>
+                    <li class="list-group-item">Premium feature 3</li>
+                    <li class="list-group-item">Premium feature 4</li>
+                    <li class="list-group-item">Premium feature 5</li>
                 </ul>
+                <div class="card-footer text-center">
+                    <%= link_to "Go Pro", new_user_registration_path(plan: @proPlan.id), class: 'btn btn-success btn-lg' %>
+                </div>
             </div>
         </div>
     </div>

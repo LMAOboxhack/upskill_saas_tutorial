@@ -1,49 +1,50 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-      <h2>Sign up</h2>
+      <h2 class="signup-header-padding">Sign up</h2>
     </div>
   </div>
   <div class="row">
     <div class="col-md-4">
-      <div class="well">
-        <% if params[:plan] == '2' %>
-          <%= render "pro_form" %>
-        <% else %>
-          <%= render "basic_form" %>
-        <% end %>
-        <%= render "devise/shared/links" %>
+      <div class="card bg-light">
+        <div class="card-body">
+          <% if params[:plan] == '2' %>
+            <%= render "pro_form" %>
+          <% else %>
+            <%= render "basic_form" %>
+          <% end %>
+          <%= render "devise/shared/links" %>
+        </div>
       </div>
     </div>
     
-    <div class="col-md-7 col-md-offset-1">
+    <div class="col-md-7 offset-md-1">
       <% if params[:plan] == '2' %>
-        <h1 class="join-header"><span class="pro-color">Join Pro today.</span></h1>
+        <h1 class="join-header">Join <span style="color:#d3ad3a">Pro</span> today.</h1>
       <% else %>
         <h1 class="join-header"><span class="basic-color">Join today</span> - it's free.</h1>
       <% end %>
       
-      <div class="media">
-        <div class="media-left"><img class="media-object icon-size" src="https://image.flaticon.com/icons/svg/3039/3039679.svg"></div>
-        <div class="media-body"><h4 class="media-header padding-left-5">Connect with millions worldwide</h4></div>
+      <div class="media my-4">
+        <img src="https://image.flaticon.com/icons/svg/3039/3039679.svg" class="icon-size mr-4" alt="error" >
+        <div class="media-body align-self-center"><h5 class="my-auto">Connect with millions worldwide</h5></div>
       </div>
-      <div class="media">
-        <div class="media-left"><img class="media-object icon-size" src="https://image.flaticon.com/icons/svg/1006/1006555.svg"></div>
-        <div class="media-body"><h4 class="media-header padding-left-5">Collaborate with professionals in various spheres</h4></div>
+      <div class="media my-4">
+        <img src="https://image.flaticon.com/icons/svg/1006/1006555.svg" class="icon-size mr-4" alt="error" >
+        <div class="media-body align-self-center"><h5 class="my-auto">Collaborate with professionals in various spheres</h5></div>
       </div>
-      <div class="media">
-        <div class="media-left"><img class="media-object icon-size" src="https://image.flaticon.com/icons/svg/2910/2910875.svg"></div>
-        <div class="media-body"><h4 class="media-header padding-left-5">Exchange ideas with like-minded entrepreneurs</h4></div>
+      <div class="media my-4">
+        <img src="https://image.flaticon.com/icons/svg/2910/2910875.svg" class="icon-size mr-4" alt="error" >
+        <div class="media-body align-self-center"><h5 class="my-auto">Exchange ideas with like-minded entrepreneurs</h5></div>
       </div>
-      
       <% if params[:plan] == '2' %> <!-- PRO PLAN -->
-        <div class="media">
-          <div class="media-left"><img class="media-object icon-size" src="https://image.flaticon.com/icons/svg/2831/2831004.svg"></div>
-          <div class="media-body"><h4 class="media-header padding-left-5">Premium exclusive feature 1!</h4></div>
+        <div class="media my-4">
+          <img src="https://image.flaticon.com/icons/svg/2831/2831004.svg" class="icon-size mr-4" alt="error" >
+          <div class="media-body align-self-center"><h5 class="my-auto">Premium exclusive feature 1!</h5></div>
         </div>
-        <div class="media">
-          <div class="media-left"><img class="media-object icon-size" src="https://image.flaticon.com/icons/svg/1666/1666094.svg"></div>
-          <div class="media-body"><h4 class="media-header padding-left-5">Premium exclusive feature 2!</h4></div>
+        <div class="media my-4">
+          <img src="https://image.flaticon.com/icons/svg/1666/1666094.svg" class="icon-size mr-4" alt="error" >
+          <div class="media-body align-self-center"><h5 class="my-auto">Premium exclusive feature 2!</h5></div>
         </div>
       <% end %>
     </div>

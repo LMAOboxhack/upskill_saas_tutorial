@@ -24,9 +24,9 @@ $(document).on('turbolinks:load', function() {
     /* Use Stripe JS library to validate card */
     var error = false;
     var checks = {
-      cardNumberCheck: Stripe.card.validateCardNumber(cardNum),
-      CVCCheck: Stripe.card.validateCVC(cvcNum),
-      cardExpirationDateCheck: Stripe.card.validateExpiry(expMonth, expYear)
+      "card number": Stripe.card.validateCardNumber(cardNum),
+      "CVC": Stripe.card.validateCVC(cvcNum),
+      "card expiration date": Stripe.card.validateExpiry(expMonth, expYear)
     };
     
     for (const [key, value] of Object.entries(checks)) {
