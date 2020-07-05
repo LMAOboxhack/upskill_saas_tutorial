@@ -1,6 +1,7 @@
 /* global $, Stripe */
 // When DocumentReady function triggered 
 $(document).on('turbolinks:load', function() {
+  
   // Assign variables to select form & submit button
   var proForm = $('#pro_form');
   var submitButton = $('#form-submit-btn');
@@ -12,8 +13,9 @@ $(document).on('turbolinks:load', function() {
   submitButton.click(function(event) {
     // Prevent usual behaviour (validation & save to Database)
     event.preventDefault();
-    // Disable button & alert user that JS is working in the background
-    submitButton.val("Processing...").prop('disabled', true);
+    // Change button to spinner & alert user that JS is working in the background
+    submitButton.prop('disabled', true);
+    submitButton.get(0).innerHTML = '<i class="fa fa-circle-o-notch fa-spin"></i> Please wait...';
     
     // Grab info from form & assign to variables
     var cardNum = $('#card_number').val(),
@@ -39,7 +41,7 @@ $(document).on('turbolinks:load', function() {
     }
     
     // If there is an error, refresh the signup button to allow user to rectify fields
-    if (error) { submitButton.val("Sign up").prop('disabled', false); }
+    if (error) { submitButton.val("Sign up").prop('disabled', false); submitButton.get(0).innerHTML = "Sign up" }
     else {
       // Send CC info to Stripe
       Stripe.card.createToken({

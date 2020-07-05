@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     # to extend the functionality of the base devise registrations controller.
     devise_for :users, controllers: { registrations: 'users/registrations' }
     
-    get 'about', to: 'pages#about'
     resources :contacts, only: :create
+    get 'about', to: 'pages#about'
     get 'contact-us', to: 'contacts#new', as: 'new_contact'
+    get 'users', to: redirect('/')
 end
