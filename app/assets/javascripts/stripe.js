@@ -31,6 +31,7 @@ $(document).on('turbolinks:load', function() {
       "card expiration date": Stripe.card.validateExpiry(expMonth, expYear)
     };
     
+    // Loop through the checks & print error message if any of the checks fail
     for (const [key, value] of Object.entries(checks)) {
       if(!value) {
         error = true;
