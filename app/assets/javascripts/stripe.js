@@ -42,7 +42,7 @@ $(document).on('turbolinks:load', function() {
     }
     
     // If there is an error, refresh the signup button to allow user to rectify fields
-    if (error) { submitButton.val("Sign up").prop('disabled', false); submitButton.get(0).innerHTML = "Sign up" }
+    if (error) { submitButton.val("Sign up").prop('disabled', false); submitButton.get(0).innerHTML = "Sign up" ; }
     else {
       // Send CC info to Stripe
       Stripe.card.createToken({
