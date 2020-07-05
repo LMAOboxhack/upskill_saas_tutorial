@@ -32,7 +32,8 @@ $(document).on('turbolinks:load', function() {
     for (const [key, value] of Object.entries(checks)) {
       if(!value) {
         error = true;
-        alert(`The ${ key } appears to be invalid.`);
+        var msg = "The " + key + " appears to be invalid.";
+        alert(msg);
         break;
       }
     }
