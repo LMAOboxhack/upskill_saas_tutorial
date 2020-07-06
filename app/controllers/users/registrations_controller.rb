@@ -17,6 +17,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
         end
       end
     end
+    # Generate Profile object for new user
+    Profile.create(user_id: resource.id, contact_email: resource.email)
   end
   
   private

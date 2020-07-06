@@ -10,5 +10,4 @@ Rails.application.routes.draw do
     resources :contacts, only: :create
     get 'about', to: 'pages#about'
     get 'contact-us', to: 'contacts#new', as: 'new_contact'
-    get 'users', to: redirect('/')
 end
