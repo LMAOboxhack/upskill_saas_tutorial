@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :plan
+  has_one :profile
   
   PRO_PRICE_ID = ENV["pro_price_id"] # Access price ID ENV variable
   attr_accessor :stripe_card_token # Access the stripe_card_token attribute injected into the pro_form by stripe.js
