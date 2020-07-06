@@ -15,7 +15,8 @@ $(document).on('turbolinks:load', function() {
     event.preventDefault();
     // Change button to spinner & alert user that JS is working in the background
     submitButton.prop('disabled', true);
-    submitButton.get(0).innerHTML = '<i class="fa fa-circle-o-notch fa-spin"></i> Please wait...';
+    submitButton.get(0).innerHTML = 
+      '<div class="d-flex align-items-center"><span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Loading</div>' ;
     
     // Grab info from form & assign to variables
     var cardNum = $('#card_number').val(),

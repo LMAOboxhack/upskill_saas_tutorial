@@ -1,22 +1,22 @@
 source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.0.0'
+gem 'rails', '5.1.7'
 # Use Puma as the app server
-gem 'puma', '3.4.0'
+gem 'puma', '4.3.5'
 # Use SCSS for stylesheets
-gem 'sass-rails', '5.0.6'
+gem 'sass-rails', '5.0.7'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '4.2.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '4.2.1'
+gem 'coffee-rails', '4.2.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '~> 4.4'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '5.0.0'
+gem 'turbolinks', '~> 5.2', '>= 5.2.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '2.5.0'
+gem 'jbuilder', '~> 2.10'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '3.0'
 # Use ActiveModel has_secure_password
@@ -25,13 +25,13 @@ gem 'jbuilder', '2.5.0'
 # gem 'capistrano-rails', group: :development
 
 # Use Twitter Bootstrap library for frontend UI & layout
-gem 'bootstrap', '~> 4.1', '>= 4.1.3'
+gem 'bootstrap', '~> 4.5'
 
 # Popper gem for Bootstrap dependencies
-gem 'popper_js', '~> 1.9', '>= 1.9.9'
+gem 'popper_js', '~> 1.16'
 
 # Use Font Awesome for icon library
-gem 'font-awesome-sass', '4.6.2'
+gem 'font-awesome-sass', '~> 5.13'
 
 # Use Hirb for better database visual representation in the console
 gem 'hirb', '0.7.3'
@@ -65,4 +65,4 @@ group :production do
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-ruby '2.3.0'
+ruby '2.7.1'
