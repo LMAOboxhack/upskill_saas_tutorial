@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.1.7'
+gem 'rails', '5.2.4.3'
 # Use Puma as the app server
 gem 'puma', '4.3.5'
 # Use SCSS for stylesheets
@@ -44,6 +44,9 @@ gem 'stripe', '5.22.0'
 
 # Use Figaro for ENV variables
 gem 'figaro', '1.1.1'
+
+# Use AWS SDK for Active Storage
+gem "aws-sdk-s3", require: false
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

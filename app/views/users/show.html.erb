@@ -1,19 +1,22 @@
+
 <div class="container">
   <div class="card bg-light mb-3">
     <div class="card-body">
-      <%= debug(params) if Rails.env.development? %>
+      <div class="row">
+        <div class="col-md-3">
+          <%= image_tag(@user.profile.profile_picture, class: 'img-fluid') %>
+        </div>
+        <div class="col-md-9">
+          <p><strong>Name: </strong><%= @user.profile.first_name %> <%= @user.profile.last_name %></p>
+          <p><strong>Job title: </strong><%= @user.profile.job_title %></p>
+          <% if current_user.plan_id == 2 %>
+            <p><strong>Phone number: </strong><%= @user.profile.phone_number %></p>
+            <p><strong>Email: </strong><%= @user.profile.email %></p>
+          <% end %>
+          <p><strong>Description: </strong><%= @user.profile.description %></p>
+          <%= link_to "Edit profile", edit_user_profile_path(current_user.id), class: 'btn btn-info mt-2' %>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="card bg-light mt-3">
-    <div class="card-body">
-      <p><strong>Name: </strong><%= @user.profile.first_name %> <%= @user.profile.last_name %></p>
-      <p><strong>Job title: </strong><%= @user.profile.job_title %></p>
-      <% if current_user.plan_id == 2 %>
-        <p><strong>Phone number: </strong><%= @user.profile.phone_number %></p>
-        <p><strong>Email: </strong><%= @user.profile.email %></p>
-      <% end %>
-      <p><strong>Description: </strong><%= @user.profile.description %></p>
-    </div>
-  </div>
-  <%= link_to "Edit profile", edit_user_profile_path(current_user.id), class: 'btn btn-info mt-3' %>
 </div>
