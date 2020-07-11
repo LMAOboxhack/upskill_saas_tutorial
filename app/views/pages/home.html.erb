@@ -6,43 +6,55 @@
     <h1>Welcome to <span class="logo-color">DevMatch</span></h1>
     <h3>Where entrepreneurs and developers meet.</h3>
 </div>
-<div class="container mt-4">
-    <div class="row">
-        <div class="col-md-4 offset-md-2 my-autso">
-            <div class="card">
-                <div class="card-header basic-card">
-                    <h2 class="text-center my-2">Basic</h2><hr>
-                    <h6 class="text-center my-2">Free</h6>
-                </div>
-                <ul class="list-group">
-                    <li class="list-group-item">Join our network of professionals worldwide</li>
-                    <li class="list-group-item">Basic feature 2</li>
-                    <li class="list-group-item">Basic feature 3</li>
-                    <li class="list-group-item">Basic feature 4</li>
-                    <li class="list-group-item">Basic feature 5</li>
-                </ul>
-                <div class="card-footer text-center">
-                    <%= link_to "Sign up for free", new_user_registration_path(plan: @basicPlan.id), class: 'btn btn-primary btn-lg' %>
+<% if !user_signed_in? %>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4 offset-md-2 my-auto">
+                <div class="card">
+                    <div class="card-header basic-card">
+                        <h2 class="text-center my-2">Basic</h2><hr>
+                        <h6 class="text-center my-2">Free</h6>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">Join our network of professionals worldwide</li>
+                        <li class="list-group-item">Basic feature 2</li>
+                        <li class="list-group-item">Basic feature 3</li>
+                        <li class="list-group-item">Basic feature 4</li>
+                        <li class="list-group-item">Basic feature 5</li>
+                    </ul>
+                    <div class="card-footer text-center">
+                        <%= link_to "Sign up for free", new_user_registration_path(plan: @basicPlan.id), class: 'btn btn-primary btn-lg' %>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4 my-auto">
-            <div class="card align-middle">
-                <div class="card-header pro-card">
-                    <h2 class="text-center my-2">Pro</h2><hr>
-                    <h6 class="text-center my-2">$9.90/month</h6>
-                </div>
-                <ul class="list-group">
-                    <li class="list-group-item">Exclusive access to our curated communities</li>
-                    <li class="list-group-item">Premium feature 2</li>
-                    <li class="list-group-item">Premium feature 3</li>
-                    <li class="list-group-item">Premium feature 4</li>
-                    <li class="list-group-item">Premium feature 5</li>
-                </ul>
-                <div class="card-footer text-center">
-                    <%= link_to "Go Pro", new_user_registration_path(plan: @proPlan.id), class: 'btn btn-success btn-lg' %>
+            <div class="col-md-4 my-auto">
+                <div class="card align-middle">
+                    <div class="card-header pro-card">
+                        <h2 class="text-center my-2">Pro</h2><hr>
+                        <h6 class="text-center my-2">$9.90/month</h6>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">Exclusive access to our curated communities</li>
+                        <li class="list-group-item">Premium feature 2</li>
+                        <li class="list-group-item">Premium feature 3</li>
+                        <li class="list-group-item">Premium feature 4</li>
+                        <li class="list-group-item">Premium feature 5</li>
+                    </ul>
+                    <div class="card-footer text-center">
+                        <%= link_to "Go Pro", new_user_registration_path(plan: @proPlan.id), class: 'btn btn-success btn-lg' %>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+<% else %>
+    <% @profile = User.find(current_user.id).profile %>
+    <div class="container text-center mt-5">
+        <% if @profile.first_name.nil? || @profile.last_name.nil? %>
+            <h4>Thank you for signing up with Devmatch.</h4>
+            <%= link_to "Build your profile here", edit_user_profile_path(current_user.id), class: 'btn btn-info' %>
+        <% else %>
+            Welcome back! You're all set to go.
+        <% end %>
+    </div>
+<% end %>

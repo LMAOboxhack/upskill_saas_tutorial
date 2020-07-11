@@ -28,14 +28,14 @@
                         <li class="nav-item"><%= link_to "About", about_path, class: 'nav-link' %></li>    <!-- This way is for if you only need clickable text. -->
                         <li class="nav-item"><%= link_to "Contact Us", new_contact_path, class: 'nav-link' %></li>
                         <% if user_signed_in? %>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="dropdown ml-2">
+                                <button type="button" class="btn btn-primary btn-md dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Account
                                 </button>
                                 <div class="dropdown-menu">
-                                    <%= link_to "Profile", user_profile_path(current_user.id), class: 'btn btn-primary dropdown-item' %>
+                                    <%= link_to "Profile", user_path(current_user.id), class: 'dropdown-item' %>
                                     <div class="dropdown-divider"></div>
-                                    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-primary dropdown-item' %>
+                                    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
                                 </div>
                             </div>
                         <% else %>

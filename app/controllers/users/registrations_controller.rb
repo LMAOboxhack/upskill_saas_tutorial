@@ -11,23 +11,28 @@ class Users::RegistrationsController < Devise::RegistrationsController
         # method defined in the model, that will save the Customer Token returned by Stripe,
         # along with the user details (user,pass) that are ordinarily saved.
         if resource.plan_id == 2
-          resource.save_pro
+          resource.save_pro # Save with Stripe fields for pro users
         else
-          resource.save
+          resource.save # Normal save for basic users
         end
       end
     end
-    # Generate Profile object for new user
-    Profile.create(user_id: resource.id, contact_email: resource.email)
+    # Generate Profile object for new user & save it
+    @profile = resource.build_profile( profile_params ).save
   end
   
   private
-  def select_plan
-    unless (params[:plan] == '1' || params[:plan] == '2')
-      flash[:notice] = "Please select a valid plan."
-      redirect_to root_url
+    def select_plan
+      unless (params[:plan] == '1' || params[:plan] == '2')
+        flash[:notice] = "Please select a valid plan."
+        redirect_to root_url
+      end
     end
-  end
+    
+  private
+    def profile_params
+      params.require(:user).permit(:email)
+    end
 end
 
     
