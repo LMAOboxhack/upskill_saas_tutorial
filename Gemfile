@@ -46,7 +46,7 @@ gem 'stripe', '5.22.0'
 gem 'figaro', '1.1.1'
 
 # Use AWS SDK for Active Storage
-gem "aws-sdk-s3", require: false
+gem 'aws-sdk-s3', '~> 1'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
