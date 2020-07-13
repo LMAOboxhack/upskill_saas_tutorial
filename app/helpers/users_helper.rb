@@ -1,6 +1,6 @@
 module UsersHelper
-  def job_title_icon
-    case @user.profile.job_title
+  def job_title_icon(user)
+    case user.profile.job_title
     when "Developer"
       "<i class='fas fa-code mr-2'></i>".html_safe
     when "Entrepreneur"

@@ -1,0 +1,21 @@
+<div class="container">
+  <% @users.each do |u| %>
+    <div class="card bg-light my-4">
+      <div class="card-body">
+        <div class="media position-relative">
+          <%= image_tag(u.profile.profile_picture, class: 'dp align-self-center mr-4') %>
+          <div class="media-body">
+            <h5><b><%= u.profile.first_name %> <%= u.profile.last_name %></b></h5><hr/>
+            <p>
+              <%= u.profile.job_title %>
+              <% if u.plan_id == 2 %>
+                <span class="badge badge-success ml-1">Pro</span>
+              <% end %>
+            </p>
+            <%= link_to "", user_path(u.id), class: 'stretched-link' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
