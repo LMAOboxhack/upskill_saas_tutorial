@@ -2,7 +2,8 @@
 
 [Upskill](http://upskillcourses.com) - The Essential Web Developer Course   
 
-DevMatch - Ruby on Rails app attempt
+DevMatch - Ruby on Rails app  
+
 Scope: 
   - UI design using Bootstrap
   - User accounts using Devise
