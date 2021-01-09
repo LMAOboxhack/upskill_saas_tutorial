@@ -1,14 +1,10 @@
 # README
+ [DevMatch](https://devmatch1337.herokuapp.com/) - Ruby on Rails app  
 
-[Upskill](http://upskillcourses.com) - The Essential Web Developer Course   
+Basic Ruby on Rails app, 
 
-[DevMatch](https://devmatch1337.herokuapp.com/) - Ruby on Rails app  
-
-Scope: 
-  - UI design using Bootstrap
-  - User accounts using Devise
-  - User profiles
-  - 'Contact Us' page using Rails Action Mailer
-  - Deployment to Heroku production-grade servers
-  
-  
+Learning points: 
+  - UI design with Bootstrap
+  - UAC with Devise
+  - 'Contact Us' page with Rails Action Mailer
+  - Deploying production-grade servers ie Heroku
