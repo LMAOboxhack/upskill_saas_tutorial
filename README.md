@@ -1,7 +1,7 @@
 # README
- [DevMatch](https://devmatch1337.herokuapp.com/) - Ruby on Rails app  
+ [DevMatch](https://devmatch1337.herokuapp.com/)
 
-Basic Ruby on Rails app, 
+Basic Ruby on Rails app
 
 Learning points: 
   - UI design with Bootstrap
